@@ -99,7 +99,7 @@ def finde_weg(graph, start, end):
                 while cur is not None:
                     path.appendleft(cur)
                     cur = visited[cur]
-                return path
+                return list(path)
             for nb in graph[node]:
                 if nb not in visited:
                     queue.append((nb, node))
