@@ -106,5 +106,5 @@ def finde_weg(graph, start, end):
     return None
 
 print(finde_weg(G1, 0, 4))
-print(finde_weg(eur_full, "D", "SLO"))
+print(finde_weg(eur_small, "D", "SLO"))
 print(finde_weg(eur_full, "EST", "P"))
