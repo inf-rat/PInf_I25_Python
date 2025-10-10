@@ -92,7 +92,6 @@ def tiefensuche(graph, start, visited = None):
         if not n in visited:
             tiefensuche(graph, n, visited)
 
-# Könnte noch Fehler enthalten
 def dfs_wegfindung(graph, start, end, visited = None):
     if start == end:
         return [end]
@@ -107,7 +106,8 @@ def dfs_wegfindung(graph, start, end, visited = None):
                 return path
     return None
 
-print(dfs_wegfindung(eur_small, "D", "DK"))
+print(dfs_wegfindung(eur_small, "D", "F"))
+print(dfs_wegfindung(eur_full, "P", "A"))
 
 
 
