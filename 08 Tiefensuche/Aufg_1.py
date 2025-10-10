@@ -92,19 +92,22 @@ def tiefensuche(graph, start, visited = None):
         if not n in visited:
             tiefensuche(graph, n, visited)
 
-def finde_weg_dfs(graph, start, end, visited = None):
-    if visited is None:
-        visited = set()
+# Könnte noch Fehler enthalten
+def dfs_wegfindung(graph, start, end, visited = None):
     if start == end:
         return [end]
+    if visited is None:
+        visited = set()
     visited.add(start)
-    for n in graph[start]:
-        if not n in visited:
-            path = finde_weg_dfs(graph, n, end, visited) # Weg von n zum Ende
-            path.insert(0, start)
-            return path
+    for node in graph[start]:
+        if node not in visited:
+            path = dfs_wegfindung(graph, node, end, visited)
+            if path:
+                path.insert(0, start)
+                return path
+    return None
 
-print(finde_weg_dfs(eur_small, "D", "PL"))
+print(dfs_wegfindung(eur_small, "D", "DK"))
 
 
 
