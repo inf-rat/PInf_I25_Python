@@ -45,5 +45,16 @@ def BFS(G, v):
                 if not w in visited:
                     queue.append(w)
 
+def breitensuche(graph, start):
+    visited = set()
+    queue = [start]
+    while queue != []:
+        start = queue.pop(0)
+        if not start in visited:
+            print(start)
+            visited.add(start)
+            for neibor in graph[start]:
+                queue.append(neibor)
 
-BFS(G3, "IRL")
+
+breitensuche(G3, "D")
